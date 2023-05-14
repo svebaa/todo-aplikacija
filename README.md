@@ -1,3 +1,3 @@
 # Todo Aplikacija
 
-Kao završni projekt iz informatike napravio sam desktop aplikacija napisana u Typescript-u koristeći React i Electron.
+Kao završni projekt iz informatike napravio sam desktop aplikaciju napisanu u Typescript-u koristeći React i Electron.
