@@ -1,6 +1,6 @@
 import { useReducer, useState } from "react";
 import { DragDropContext, DragUpdate, DropResult } from "react-beautiful-dnd";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { TasksContext, TasksDispatchContext } from "./TasksContext";
 import History from "./pages/History";
@@ -34,8 +34,13 @@ const App = () => {
 		console.log(update);
 	};
 
+	const basename =
+		process.env.PUBLIC_URL === "." ? "/" : process.env.PUBLIC_URL;
+
+	console.log(basename);
+
 	return (
-		<BrowserRouter>
+		<HashRouter basename={basename}>
 			<TasksContext.Provider value={state}>
 				<TasksDispatchContext.Provider value={dispatch}>
 					<Routes>
@@ -57,7 +62,7 @@ const App = () => {
 					</Routes>
 				</TasksDispatchContext.Provider>
 			</TasksContext.Provider>
-		</BrowserRouter>
+		</HashRouter>
 	);
 };
 
